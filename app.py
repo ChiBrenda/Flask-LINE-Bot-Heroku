@@ -131,7 +131,7 @@ def callback_yangbot8():
             df1 = pd.DataFrame.from_dict(my_data)
 
             df1.plot(x='date', y='close')
-            plt.title('%s [%s]' % (stock['info']['name'], stock.sid))
+            plt.title('[%s]' %(stock.sid))
             plt.savefig(fn)
             plt.close()
 
