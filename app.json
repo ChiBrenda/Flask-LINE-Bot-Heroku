@@ -10,6 +10,14 @@
         "CHANNEL_SECRET": {
             "description": "LINE bot Channel secret",
             "required":  true
+        },
+        "IMGUR_SECRET": {
+            "description": "Imgurl secret",
+            "required":  true
+        },
+        "IMGUR_ID": {
+            "description": "Imgurl id",
+            "required":  true
         }
     }
 }
