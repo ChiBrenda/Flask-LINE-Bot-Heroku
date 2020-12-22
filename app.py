@@ -156,6 +156,29 @@ def callback_yangbot8():
                 image_message
             )
 
+        elif(text.startswith('$')):
+            text = text[1:]
+            print(text)
+            stock = twstock.Stock(text)
+            bfp = twstock.BestFourPoint(stock)
+
+            print(bfp.best_four_point())
+            content = "建議做多，因為:\n" if bfp.best_four_point()[
+                0] else "建議放空，因為:\n"
+            content += bfp.best_four_point()[1]
+
+            line_bot_api_8.reply_message(
+                event.reply_token,
+                TextSendMessage(text=content)
+            )
+            
+        else:
+            content = "歡迎使用STOCK股票小精靈!( ^ω^)\n基礎功能請輸入:\n#股票代號 查詢即時股價。\n/股票代號 觀看股票線圖。\n$股票代號 觀看簡單分析。"
+            line_bot_api_8.reply_message(
+                event.reply_token,
+                TextSendMessage(text=content)
+            )
+
     return 'OK'
 
 
